@@ -1,0 +1,89 @@
+* {
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			body {
+				margin: 0;
+				pading: 0;
+				color: Black;
+				/*background: url('img/bg-login.png') repeat #FFFFFF;*/
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#dummy {				
+				top: 0;
+				left: 0;
+				border-bottom: solid 3px #777973;
+				height: 170px;
+				width: 100%;
+				background: url('bg-login-top.png') repeat #fff;
+				margin-left:0px;
+			}
+			
+			#dummy2 {
+				top: 0;
+				left: 0;
+				border-bottom: hidden 2px #545551;
+				height: 252px;
+				width: 100%;
+				background: transparent;
+			}
+			
+			#login-wrapper {
+				margin: 0 0 0 -160px;
+				width: 320px;
+				text-align: left;
+				z-index: 99;
+				position: fixed;
+				top: 0;
+				left: 15%;
+			}
+			
+			#login-top {
+				height: 50;
+				padding-top: -15px;
+				text-align: left;
+				float:left;
+			}																														
+		a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+	color: #000;
+}
+
+input.btn
+{
+  border: 1px solid #777777;
+  background: #6e9e2d;
+  color: white;
+  font: bold 11px 'Trebuchet MS';
+  padding: 4px;
+  cursor: pointer;
+  width:100px;
+  height:30px;
+}
+
+#upload_button {
+    width:120px;
+    height:35px;
+    text-align:center;
+    background-image:url(boton.png);
+    color:#CCCCCC;
+    font-weight:bold;
+    padding-top:15px;
+    margin:auto;
+}

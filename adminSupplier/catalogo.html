@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="styles/styleCatalogo.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="styles/styleSheet.css">	
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>		
+<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="js/catalogoFunctions.js"></script>
+<script type="text/javascript">
+
+
+	
+</script>
+<title>Catalogo - Supplier DashBoard</title>
+</head>
+<body id="login">		
+<div id="login-wrapper" class="png_bg">
+			<div id="login-top">
+				<img src="img/Supplier-logo.png"  />			
+		  </div>			                                        
+</div>
+<div id="dummy">
+  <div id="panelControl"  style="padding-top:150px; padding-left:-90px;float:left; width:600px;" >
+        
+        </div>
+        
+</div>
+<div id="dummy2">
+
+<div id="columns" style="margin-top:50px;margin-left:50px;">	
+<table width="200" border="0" align="left" style="margin-left:200px;">
+  <tr>
+  <td><p style="margin-bottom:20px;" align="center"><b>Categorías</b></p></td>
+  </tr>
+  <tr>
+    <td>
+    <div id="buttonCategoryChicos"  class="column" style="margin-bottom:20px; height:30px;width:250px;display:inline-table;" id="category" >
+    <div id="headerCategoryChicos" onClick="displayCategoriaChicos();"><header>Para Chicos</header></div>
+    <div id="categoryMainPara_Chicos" style="display:none;" >
+    <div id="Categoryproducto1" title="Producto 1" style="margin-left:80px;margin-top:10px;margin-right:5px;width:250px;"><b>Producto 1 </b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+    <div id="Categoryproducto2" title="Producto 2" style="margin-left:80px;margin-top:10px;"><b>Producto 2</b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+    <div id="Categoryproducto3" title="Producto 3" style="margin-left:80px;margin-top:10px;"><b>Producto 3</b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+    </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td>  
+    <div id="buttonCategoryAccesorios" class="column" style="margin-bottom:20px; height:30px;width:250px;display:inline-table;" id="category">
+    <div id="headerCategoryAccesorios" onClick="displayCategoriaAccesorios();"><header>Accesorios</header></div>
+    <div id="categoryMainAccesorios" style="display:none;">
+    <div id="Categoryproducto4" title="Producto 4" style="margin-left:80px;margin-top:10px;"><b>Producto 4</b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+    <div id="Categoryproducto5" title="Producto 5" style="margin-left:80px;margin-top:10px;"><b>Producto 5</b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+    </div>
+    </div></td>
+  </tr>
+  <tr> 
+    <td>  
+    <div id="buttonCategoryMujeres" class="column"  style="margin-bottom:20px; height:30px;width:250px;display:inline-table;" id="category">
+    <div id="headerCategoryMujeres" onClick="displayCategoriaMujeres();"><header>Para Mujeres</header></div>
+    <div id="categoryMainPara_Mujeres" style="display:none">
+        <div id="Categoryproducto6" title="Producto6" style="margin-left:80px;margin-top:10px;"><b>Producto 6</b><img style="margin-left:10px;" src="img/draftIcon.png" width="18" height="23" onClick="removeProductToDraft(this.parentNode);"/></div>
+        </div>
+    </div></td>
+  </tr>
+  <tr id="lastRow">
+
+
+</tr>
+  
+    
+  <tr>
+    <td>  
+    <div id="panelNewCategory" class="category"  style="margin-bottom:20px; height:30px;width:250px;display:inline-table;">
+    <p id="labelNewCategory" style="margin-top:12px; display:table;margin-left:23px;" align="center" 
+    onclick="$('#newCategory').css('display','table');$('#labelNewCategory').css('display','none');">
+    <b>Solicitar Nueva Categoría</b></p>
+    <div id="newCategory" style="display:none">
+    <p><label>Nombre:</label>
+    <input type="text" value="" id="categoryName" name="categoryName" style="margin-right:10px;" /><div width="50px" id="msgCategoryName"></div></p>
+    <p><label>Costo de Envío:</label>
+    <input type="text" value="" id="costoCategoria" name="costoCategoria" size="2" ></p>
+    <p><label>Tiempo de Envío:</label>
+    <input type="text" value="" id="tiempoCategoria" name="tiempoCategoria" size="2"><input id="medidaTiempo" type="radio" checked="checked" name="medidaTiempo" /> Horas <input type="radio" name="medidaTiempo"  id="medidaTiempo"/> Días</p>
+    <table>
+    <tr>
+    <td>
+    <input type="button" value="Cancelar" class="btn" style="margin-left:140px;" onClick="$('#newCategory').css('display','none');$('#labelNewCategory').css('display','table');	$('#categoryName').attr('value','');
+	$('#costoCategoria').attr('value','');
+	$('#tiempoCategoria').attr('value','');"/></td>
+    <td><input type="button" value="Aceptar" class="btn"  onClick="validateNewCategory(this);"/></td>
+    </tr>
+    </table>
+        </div>
+    </div></td>
+  </tr>   
+</table>
+
+<table width="200" border="0" align="right" style="margin-right:200px;">
+  <tr>
+  <td><div id="panelNewCategory" class="category"  style="margin-bottom:20px; height:30px;width:220px;display:inline-table;margin-left:-35px;" >
+    <a href="NewProduct.php"><p id="labelNewCategory" style="margin-top:12px; display:table;margin-left:23px;color:#FFF;" align="center"  ><b>Crear Nuevo Producto</b></p></a>
+    </div>
+    <br /><p style="margin-bottom:20px;margin-left:-60px;" align="center"><b>Activos</b></p></td>
+  </tr>
+  <tr>
+    <td>
+    <div id="mainActiveProducts">
+    <div id="activeproducto1" title="Producto 1" style="diplay:table; height: 150px;
+  width: 200px;float: left;margin-bottom:20px;">
+    <div class="column" draggable="true" style="margin-bottom:20px;"  id="active">
+    <header>Producto 1<input id="Producto 1" type="hidden" value="categoryMainPara_Chicos" title="Para Chicos"/></header>
+    <p id="categoryName" style="color:#000;">Para Chicos</p>    
+    </div>    <img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>    
+    <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" />    
+    <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />    
+    </div>
+    
+    <div id="activeproducto2" title="Producto 2" style="diplay:table; height: 150px;
+  width: 200px;float: left;margin-bottom:20px;">
+    <div class="column" draggable="true" style="margin-bottom:20px;" id="active">
+    <header>Producto 2<input type="hidden" value="categoryMainPara_Chicos" title="Para Chicos"/></header><p style="color:#000;" id="categoryName">Para Chicos</p>
+    </div>
+    <img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>
+    <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" />    
+    <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />    
+    </div>
+    
+    <div id="activeproducto3" title="Producto 3" style="diplay:table; height: 150px;
+  width: 200px;float: left;margin-bottom:20px;">
+    <div class="column" draggable="true" style="margin-bottom:20px;" id="active">
+    <header>Producto 3<input type="hidden" value="categoryMainPara_Chicos" title="Para Chicos"/></header><p style="color:#000;" id="categoryName">Para Chicos</p>
+    </div>
+    <img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>
+        <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" />    
+                <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />  
+    </div>
+    
+    
+    <div id="activeproducto4" title="Producto 4" style="diplay:table; height: 150px;
+  width: 200px;float: left;margin-bottom:20px;">
+    <div class="column" draggable="true" style="margin-bottom:20px;" id="active">
+    <header>Producto 4<input type="hidden" value="categoryMainAccesorios" title="Accesorios" /></header><p style="color:#000;" id="categoryName">Accesorios</p>
+    </div>
+    <img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>
+        <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" />    
+                <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />    
+    </div>
+    
+    
+    <div id="activeproducto5" title="Producto 5" style="diplay:table; height: 150px;
+  width: 200px;float: left;margin-bottom:20px;">
+    <div class="column" draggable="true" style="margin-bottom:20px;" id="active">
+    <header>Producto 5<input type="hidden" value="categoryMainAccesorios" title="Accesorios"/></header><p style="color:#000;" id="categoryName">Accesorios</p>
+    </div>
+<img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>
+        <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" class="tilde" onMouseOver="changeIconTilde();"/>    
+                <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />                            
+    </div>
+    
+    
+        <div id="activeproducto6" title="Producto 6" style="diplay:table; height: 150px;
+      width: 200px;float: left;margin-bottom:20px;">
+        <div class="column" draggable="true" style="margin-bottom:20px;" id="active">
+        <header>Producto 6<input type="hidden" value="categoryMainMujeres" title="Para Mujeres"/></header>        <p style="color:#000;" id="categoryName">Para Mujeres</p></div>
+<img src='img/tilde.png' width='22' height='17' onclick='removeToDraftFromActive(this.parentNode);' class='tilde' onmouseover='changeIconTilde();'/>
+            <img src="img/editar.png" width="23" height="18" onClick="" style="margin-top:15px;" />    
+                    <img src="img/papeleraReciclaje.gif" width="23" height="22" onClick="" style="margin-top:15px;" />        
+        </div>
+       </div>
+    </td>
+  </tr>
+  <tr>
+  <td>
+  <table id="contenedorBorrador">
+  <tr>
+  <td><p style="margin-bottom:20px;" align="center"><b>Borrador</b></p></td>
+  </tr>
+  
+  
+  
+  </td>
+  </tr>
+  </table>
+</table>
+
+
+
+
+</div>
+
+</div>
+<script type="text/javascript" src="js/catalogoDrag&DropFunctions.js"></script>
+</body>
+</html>
+
